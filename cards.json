@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Dragon Warrior",
+    "rarity": "RARE",
+    "description": "A fierce dragon with the heart of a warrior.",
+    "image": "warrior",
+    "health": 100,
+    "attack": 50,
+    "effect": "MOVES_RIGHT",
+    "action": "NONE"
+  },
+  {
+    "name": "Elven Rouge",
+    "rarity": "COMMON",
+    "description": "A skilled archer from the elven lands.",
+    "image": "woman",
+    "health": 60,
+    "attack": 30,
+    "effect": "MIMIC",
+    "action": "NONE"
+  },
+  {
+    "name": "City Trader",
+    "rarity": "COMMON",
+    "description": "A trader.",
+    "image": "trader",
+    "health": 20,
+    "attack": 0,
+    "effect": "MOVES_RIGHT",
+    "action": "NONE"
+  },
+  {
+    "name": "Dog",
+    "rarity": "COMMON",
+    "description": "A angry dog.",
+    "image": "dog",
+    "health": 60,
+    "attack": 30,
+    "effect": "MIMIC",
+    "action": "NONE"
+  }
+]
