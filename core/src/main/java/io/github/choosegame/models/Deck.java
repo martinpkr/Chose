@@ -1,15 +1,13 @@
 package io.github.choosegame.models;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Deck {
 
     private static final int DECK_CARD_LIMIT = 20;
 
     private int cardCount;
-    private List<Card> cards;
+    private Map<String, Card> cards;
     private CardPool currentCardPool;
 
     public Deck(int cardCount) {
@@ -17,14 +15,22 @@ public class Deck {
         this.cards = getRandomCardsFromPool(cardCount);
     }
 
-    private List<Card> getRandomCardsFromPool(int numberOfCards) {
+    private Map<String, Card> getRandomCardsFromPool(int numberOfCards) {
         List<Card> allCards = CardPool.getCards();
+
         List<Card> shuffledCards = new ArrayList<>(allCards);
         Collections.shuffle(shuffledCards);
 
         int numCardsToPick = Math.min(numberOfCards, shuffledCards.size());
 
-        return shuffledCards.subList(0, numCardsToPick);
+        Map<String, Card> selectedCardsMap = new HashMap<>();
+
+        for (int i = 0; i < numCardsToPick; i++) {
+            Card card = shuffledCards.get(i);
+            String nameOfCard = card.getName();
+            selectedCardsMap.put(nameOfCard, card);
+        }
+        return selectedCardsMap;
     }
 
     public int getCardCount() {
@@ -35,11 +41,11 @@ public class Deck {
         this.cardCount = cardCount;
     }
 
-    public List<Card> getCards() {
+    public Map<String, Card> getCards() {
         return cards;
     }
 
-    public void setCards(List<Card> cards) {
+    public void setCards(Map<String, Card> cards) {
         this.cards = cards;
     }
 
